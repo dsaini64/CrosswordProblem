@@ -1,0 +1,171 @@
+	//		int[][] numList = getPermutations(wordList.size());
+		//		ArrayList<ArrayList<String>> permutations = createPermutations(numList, wordList);
+		
+		
+		//for(int y = 0; y < length; y++){//changing the y value of the first insert
+				//for(int k = 0; k <= counter; k++){//changing the x value of the first insert if needed
+					//					for(int i = 0;i < permutations.size(); i++){//repeats everything for all permutations
+		
+		
+			/*Symmetry???
+			//Adding first word vertically
+			for(int x = 0; x < length; x++){
+				//System.out.println("vertical case");
+				Crossword test = new Crossword();
+				test.length = longestWord.length();
+				test.addDashes();
+				test.firstInsert(longestWord, x, 0, 1);
+				//call this on all permutations of wordList
+				for(int i = 0;i < permutations.size(); i++){
+					if(recursiveSearch(test, permutations.get(i))==1)
+						return;
+
+				}
+
+			}*/
+	}
+
+	//
+	//public static int[][] getPermutations(int numElements){
+	//		
+	//		if(numElements == 1){
+	//			int[][] result = new int[1][1];
+	//			result[0][0] = 0;
+	//			return result;
+	//		}
+	//		
+	//		int[][] previousResult = getPermutations(numElements - 1);
+	//		int[][] result = new int[previousResult.length * numElements][numElements];
+	//		for(int x = 0; x < previousResult.length; x++)	{
+	//			for(int y = 0; y < numElements; y++){
+	//				int i;
+	//				for (i = 0; i < y; ++i) {
+	//					result[x * numElements + y][i] = previousResult[x][i];
+	//				}
+	//				result[x * numElements + y][i] = numElements - 1;
+	//				for (++i; i < numElements; ++i) {
+	//					result[x * numElements + y][i] = previousResult[x][i - 1];
+	//				}
+	//				
+	//			}
+	//		}
+	//		return result;
+	//	}
+
+	//	public static ArrayList<ArrayList<String>> createPermutations (int[][] numList, ArrayList<String> wordList){
+	//		
+	//		ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
+	//		for(int i = 0; i < numList.length; i++){
+	//			ArrayList<String> permuation = new ArrayList<String>();
+	//			for(int j = 0; j < numList[0].length; j++){
+	//				String word = wordList.get(numList[i][j]);
+	//				permuation.add(word);
+	//			}
+	//			result.add(permuation);
+	//		}
+	//		
+	//		return result;
+	//	}
+
+
+
+		/* Misc Goodies:
+ * 
+ * ~in recursiveSearch!~
+ * 
+ * //		if(noPossibilities(word, crossword)){
+//			
+//			
+//		}
+//		
+//		else{
+//			for(int i = 0; i < word.length(); i++){
+//				for(int j = 0; j < crossword.grid.size(); j++){
+//					for(int k = 0; k < crossword.length; k++){
+//						if(String.valueOf(word.charAt(i)).equals(crossword.grid.get(j).get(k))){
+//							
+//						}
+//		}
+//			}
+//			}
+//		}
+ */
+
+
+//Crossword test = new Crossword();
+//test.placeWordInGrid("babab");
+//test.addDashes();
+//
+//test.printCrossword();
+//
+////String[] words = {"lmnop", "afghi", "cjklm", "enopq", "grkso", "itmuq"};
+//
+
+//
+//ArrayList<String> unplacedWords = placeWords(test, words);
+////test.addDashesToBeginningofArray();
+//System.out.println(unplacedWords);
+//placeWords(test, unplacedWords.toArray(new String[unplacedWords.size()]));
+//
+//test.printCrossword();
+
+/* 
+	private static ArrayList<String> placeWords(Crossword test, String[] words) {
+
+		ArrayList<String> unplacedWords = new ArrayList<String> ();
+		for(String s: words){
+
+			boolean b = false;
+			for(int x = 0; x < test.length; x++){
+				for(int y = 0; y < test.length; y++){
+					if(test.insert(s, x, y, 0) == 1){
+						b = true;
+						break;
+					}
+
+					if(test.insert(s, x, y, 1) == 1){
+						b = true;
+						break;
+					}
+				}
+
+				if(b == true){ //when we inserted a word to our grid
+					//test.length += s.length();
+					//test.addDashes();
+					break;
+				}
+			}
+
+			if(b == false){
+				//word not inserted
+				unplacedWords.add(s);
+			}
+
+		}
+
+		return unplacedWords;
+	}
+ */
+
+
+		//I don't use this anymore...
+	public void addWordToGrid(String word, int letterIndex, int xValue, int yValue, Crossword crossword){
+
+		int wordLength = word.length();
+
+		if(xValue + wordLength > crossword.grid.length){
+
+
+		}
+
+		for(int i = 0; i < letterIndex; i++){
+
+			int difference = letterIndex - i;
+
+			crossword.grid[xValue][yValue - difference] = word.charAt(i);
+		}
+
+
+	}
+
+		

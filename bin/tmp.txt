@@ -1,0 +1,284 @@
+//		int x1 = x;
+//		int x2 = biggestX;
+//		for(int i = y - 1; i < y + 1; i++ ){
+//			for(int j = x - 1; j < x + 1; j++){
+//				if(!grid.get(i).get(j).equals('-')){
+//					if(j > x1){
+//						x1 = j;
+//					}
+//				}
+//			}
+//		}
+//		
+//		for(int j = x - 1; j > biggestX - size; j--){
+//			if(!grid.get(y - 1).get(j).equals('-')){
+//				if(j == x - 1){
+//					x1 = j;
+//				}
+//				else{
+//					x2 = j;
+//				}
+//			}if(!grid.get(y + 1).get(j).equals('-')){
+//				if(j == x - 1){
+//					x1 = j; 
+//				}
+//				else{
+//					x2 = j;
+//				}
+//			}
+//		}
+//		
+//		if(!grid.get(y + 1).get(x - 1).equals('-')){
+//			x1 = x - 1;
+//		}
+//		if(!grid.get(y - 1).ge)
+
+
+
+
+//	List<WordPos> horizontalWords;
+//	List<WordPos> verticalWords;
+
+
+//		horizontalWords = new ArrayList<WordPos>();
+//		verticalWords = new ArrayList<WordPos>();
+
+
+//		this.horizontalWords = new ArrayList<WordPos>(toBeCopied.horizontalWords);
+//		this.verticalWords = new ArrayList<WordPos>(toBeCopied.verticalWords);
+
+
+//		//word is by itself and not connecting
+//		int numDashes = 0;
+//		for(int i = 0; i < word.length(); i++){
+//			if(grid.get(y + i * yMultiplier).get(x + i * xMultiplier).equals("-")){
+//				numDashes++;
+//			}
+//		}
+//		if(numDashes == word.length()){
+//			return 0;
+//		}
+
+
+
+		//			if(y + word.length() + 1 < grid.size() && !grid.get(y + word.length() + 1).get(x).equals("-")){
+		//				return 0;
+		//			}
+
+
+
+		//			for (WordPos w : horizontalWords) {
+		//				if (w.y == y) {
+		//					if (x <= w.x + w.word.length() && w.x <= x + word.length()) {
+		//						return 0;  //PROBLEM!!!
+		//					}
+		//				} /*else if (w.y == y + 1 || w.y == y - 1) {
+		//					if (x < w.x + w.word.length() && w.x < x + word.length()) {
+		//						return 0;
+		//					}
+		//				}*/
+		//			}
+		//			//Is this necessary??
+		//			/*
+		//			for(WordPos w : verticalWords) {
+		//				if (w.y <= y && y < w.y + w.word.length()) {
+		//					if (x <= w.x && w.x < x + word.length()) { // intersect at w.x, y
+		//						if (word.charAt(w.x - x) != w.word.charAt(y - w.y)) {
+		//							return 0;
+		//						}
+		//					} else if (w.x == x - 1 || w.x == x + word.length()) {
+		//						return 0;
+		//					}
+		//				} else if (y == w.y - 1 || y == w.y + w.word.length()) {
+		//					if (x <= w.x && w.x < x + word.length()) {
+		//						return 0;
+		//					}
+		//				}
+		//			}*/
+		//			WordPos neww = new WordPos();
+		//			neww.word = word;
+		//			neww.x = x;
+		//			neww.y = y;
+		//			horizontalWords.add(neww);
+		
+		
+					// else			
+//			if(checkSurroundings(word, x, y, 0, 1) == false)
+//				return 0;
+//			
+//			if(y + word.length() > length){
+//				return 0;
+//			}
+//			
+//			int numDashes = 0;
+//			for(int i = 0; i < word.length(); i++){
+//				
+//				if(grid.get(y + i).get(x).equals("-")){
+//					
+//					numDashes++;
+//				}
+//				
+//			}
+//			
+//			if(numDashes == word.length()){
+//				return 0;
+//			}
+//			
+//			if(x!= 0 && !grid.get(y).get(x - 1).equals("-")){
+//				return 0;
+//			}
+//		
+//			
+//		for(int i = 0; i < word.length(); i++){
+//			
+//				
+//			if(!(String.valueOf(word.charAt(i)).equals(grid.get(y + i).get(x)) || grid.get(y + i).get(x).equals("-"))){
+//				
+//				return 0;
+//			}
+//			
+//			if(grid.get(y + i).get(x).equals("-")){
+//				
+//				
+//				if(x == 0){
+//					if(!grid.get(y + i).get(x + 1).equals("-")){
+//						return 0;
+//					}
+//					
+//				}
+//				
+//				else if(x == length - 1){
+//					if(!grid.get(y + i).get(x - 1).equals("-"))	{
+//						return 0;
+//					}
+//				}
+//				
+//				else if(!grid.get(y + i).get(x - 1).equals("-") || !grid.get(y + i).get(x + 1).equals("-")){
+//					return 0;
+//				}
+//			}
+//			
+//			
+//			
+//			
+//		}
+//			for (WordPos w : verticalWords) {
+//				if (w.x == x) {
+//					if (y <= w.y + w.word.length() && w.y <= y + word.length()) {
+//						return 0;
+//					}
+//				} /*else if (w.x == x + 1 || w.x == x - 1) {
+//					if (y < w.y + w.word.length() && w.y < y + word.length()) {
+//						return 0;
+//					}
+//				}*/
+//			}
+			//Is this necessary???
+			/*
+			for(WordPos w : horizontalWords) {
+				if (w.x <= x && x < w.x + w.word.length()) {
+					if (y <= w.y && w.y < y + word.length()) { // intersect at w.x, y
+						if (word.charAt(w.y - y) != w.word.charAt(x - w.x)) {
+							return 0;
+						}
+					} else if (w.y == y - 1 || w.y == y + word.length()) {
+						return 0; //PROBLEM!
+					}
+				} else if (x == w.x - 1 || x == w.x + w.word.length()) {
+					if (y <= w.y && w.y < y + word.length()) {
+						return 0;
+					}
+				}
+			}*/
+//			WordPos neww = new WordPos();
+//			neww.word = word;
+//			neww.x = x;
+//			neww.y = y;
+//			verticalWords.add(neww);
+//			//The word fits, lets add it to our grid
+//			for(int i = 0; i < word.length(); i++){
+//				
+//			
+			//				grid.get(y + i).set(x, String.valueOf(word.charAt(i)));
+			//			}
+			
+			
+			else{
+//			
+//			for(int i = 0; i < word.length(); i++){
+//				grid.get(y + i).set(x, String.valueOf(word.charAt(i)));
+//			}
+//			WordPos firstWord = new WordPos();
+//			firstWord.word = word;
+//			firstWord.x = x;
+//			firstWord.y = y;
+//			//verticalWords.add(firstWord);
+//			
+//		}
+
+
+//	public int[] returnDimensions(){
+//		for(int i = 0; i < length; i++){
+//			for(int j = 0; j < length; j++){
+//				if(!(grid.get(j).get(i).equals("-"))){
+//					return 
+//				} 
+//			}
+//		}
+//	}
+
+//		for(int i = 0; i < length; i++){
+//			if(grid.size() < i+1){
+//				
+//				ArrayList<String> want = new ArrayList<String>();
+//				
+//				for(int j = 0; j < width; j++){
+//					
+//					
+//				
+//					want.add("-");
+//					
+//					
+//				}
+//				
+//				grid.add(i, want);
+//				
+//			}
+//			if(grid.get(i).size() < length){
+//				int wordLength = grid.get(i).size();
+//				int numberOfDashes = length - wordLength; 
+//				
+//				ArrayList<String> want = grid.get(i);
+//				
+//				for(int j = 0; j < numberOfDashes; j++){
+//					
+//					want.add("-");
+//					
+//				}
+//				
+//				grid.set(i, want);
+//				
+//			}
+//			
+//		}
+		
+		
+			//	public void placeWordInGrid(String word){
+	//		
+	//		ArrayList<String> wordArray = new ArrayList<String>();
+	//		
+	//		for(int i = 0; i < word.length(); i++){
+	//			
+	//			wordArray.add(Character.toString(word.charAt(i)));
+	//			
+	//		}
+	//		
+	//		grid.add(wordArray);
+	//		length = word.length();
+	//		WordPos firstWord = new WordPos();
+	//		firstWord.word = word;
+	//		firstWord.x = 0;
+	//		firstWord.y = 0;
+	//		//horizontalWords.add(firstWord);
+	//	}
+		
